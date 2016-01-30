@@ -1,4 +1,5 @@
 FROM vladshub/docker-deluge
+MAINTAINER Vladislav Shub <vlad6il@gmail.com>
 
 # Managment
 EXPOSE 58846
