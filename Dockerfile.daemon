@@ -1,4 +1,4 @@
-FROM vladshub/docker-deluge:latest
+FROM vladshub/deluge:latest
 MAINTAINER Vladislav Shub <vlad6il@gmail.com>
 
 # Managment
