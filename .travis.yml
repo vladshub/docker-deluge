@@ -1,0 +1,14 @@
+sudo: required
+services:
+- docker
+
+script:
+- docker build -f ./Dockerfile -t vladshub/deluge:latest
+- docker build -f ./Dockerfile.web -t vladshub/deluge-web:latest
+- docker build -f ./Dockerfile.daemon -t vladshub/deluge-daemon:latest
+
+after_success:
+- docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
+- docker push vladshub/deluge:latest
+- docker push vladshub/deluge-web:latest
+- docker push vladshub/deluge-daemon:latest
