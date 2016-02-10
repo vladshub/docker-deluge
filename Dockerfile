@@ -5,12 +5,14 @@ ENV LANG en_US.UTF-8
 ENV DEBIAN_FRONTEND noninteractive
 RUN locale-gen $LANG
 
-RUN apt-get update -q
-RUN apt-get upgrade -qy
-RUN apt-get install -qy software-properties-common
-RUN add-apt-repository ppa:deluge-team/ppa
-RUN apt-get update -q && apt-get upgrade -qy
-RUN apt-get install -qy deluged deluge-web deluge-console
+RUN add-apt-repository ppa:deluge-team/ppa \
+  apt-get update -q \
+  && apt-get upgrade -qy \
+  && apt-get install -qy \
+  software-properties-common \
+  deluged \
+  deluge-web \
+  deluge-console
 
 # Managment
 #EXPOSE 58846
