@@ -8,7 +8,7 @@ RUN locale-gen $LANG
 RUN apt-get install -qy \
   software-properties-common \
   && add-apt-repository ppa:deluge-team/ppa \
-  apt-get update -q \
+  && apt-get update -q \
   && apt-get upgrade -qy \
   && apt-get install -qy \
   deluged \
