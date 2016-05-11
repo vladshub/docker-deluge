@@ -1,19 +1,22 @@
-FROM ubuntu:trusty
+FROM ubuntu:latest
 MAINTAINER Vladislav Shub <vlad6il@gmail.com>
 
 ENV LANG en_US.UTF-8
 ENV DEBIAN_FRONTEND noninteractive
 RUN locale-gen $LANG
 
-RUN apt-get install -qy \
-  software-properties-common \
-  && add-apt-repository ppa:deluge-team/ppa \
-  apt-get update -q \
+RUN apt-get update && apt-get install -qy \
+  software-properties-common
+RUN add-apt-repository ppa:deluge-team/ppa -y \
+  && apt-get update -q \
   && apt-get upgrade -qy \
   && apt-get install -qy \
   deluged \
   deluge-web \
-  deluge-console
+  deluge-console \
+  && apt-get autoremove -y \
+  && apt-get autoclean -y \
+  && apt-get clean
 
 # Managment
 #EXPOSE 58846
