@@ -3,10 +3,12 @@ MAINTAINER Vladislav Shub <vlad6il@gmail.com>
 
 ENV LANG en_US.UTF-8
 ENV DEBIAN_FRONTEND noninteractive
-RUN locale-gen $LANG
 
 RUN apt-get update && apt-get install -qy \
-  software-properties-common
+  software-properties-common locales
+
+RUN locale-gen $LANG
+
 RUN add-apt-repository ppa:deluge-team/ppa -y \
   && apt-get update -q \
   && apt-get upgrade -qy \
