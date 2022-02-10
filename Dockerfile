@@ -8,13 +8,16 @@ RUN apt-get update && apt-get install -qy \
 
 RUN locale-gen $LANG
 
-RUN add-apt-repository ppa:deluge-team/ppa -y
-RUN apt-get update -q
-RUN apt-get upgrade -qy
-RUN apt-get install -qy deluged deluge-web deluge-console
-RUN apt-get autoremove -y
-RUN apt-get autoclean -y
-RUN apt-get clean
+RUN add-apt-repository ppa:deluge-team/stable -y \
+&& apt-get update -q \
+&& apt-get upgrade -qy \
+&& apt-get install -qy \
+  deluged \
+  deluge-web \
+  deluge-console \
+&& apt-get autoremove -y \
+&& apt-get autoclean -y \
+&& apt-get clean
 
 # Managment
 #EXPOSE 58846
