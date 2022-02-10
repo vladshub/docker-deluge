@@ -7,4 +7,3 @@
 
 Deluge base image with web, console and daemon
 docker pull vladshub/docker-deluge:latest-daemon
-

@@ -1,5 +1,4 @@
-FROM ubuntu:bionic
-MAINTAINER Vladislav Shub <vlad6il@gmail.com>
+FROM ubuntu:latest
 
 ENV LANG en_US.UTF-8
 ENV DEBIAN_FRONTEND noninteractive
