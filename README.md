@@ -1,9 +1,5 @@
 # docker-deluge
-
-[![](https://images.microbadger.com/badges/image/vladshub/deluge-daemon.svg)](https://microbadger.com/images/vladshub/deluge-daemon "Get your own image badge on microbadger.com")
-
-
-[![](https://images.microbadger.com/badges/version/vladshub/deluge-daemon.svg)](https://microbadger.com/images/vladshub/deluge-daemon "Get your own image badge on microbadger.com")
+[![Docker](https://github.com/vladshub/docker-deluge/actions/workflows/docker-publish.yml/badge.svg)](https://github.com/vladshub/docker-deluge/actions/workflows/docker-publish.yml)
 
 Deluge base image with web, console and daemon
-docker pull vladshub/docker-deluge:latest-daemon
+docker pull ghcr.io/vladshub/docker-deluge:master
